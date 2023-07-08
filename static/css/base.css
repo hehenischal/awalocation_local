@@ -1,0 +1,50 @@
+.blog-image {
+    width: 60vw;
+    height: 40vw;
+}
+
+h1 {
+    font-size: 3vw;
+    text-transform: uppercase;
+}
+.navbar-image {
+    width: 10vw;
+    height: 5vh;
+}
+.masthead {
+    margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  padding-bottom: 70px; /* Height of the footer */
+}
+
+.footer {
+  position: absolute;
+  top:100%;
+  width: 100%;
+  height: 70px; /* Height of the footer */
+  background-color: #db6930;
+  color: white;
+  text-align: center;
+}
+#map {
+  box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+  -webkit-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+  transition: 2s ease-in-out;
+}
+#map:hover {
+  box-shadow: 0px 12px 41px 5px rgba(0, 0, 0, 1);
+ -webkit-box-shadow: 0px 12px 41px 5px rgba(0, 0, 0, 1);
+ transition: 2s ease-in-out;
+}

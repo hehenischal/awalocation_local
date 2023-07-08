@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+}
+body {
+    height: fit-content;
+}
+
+.row-gx-4 {
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    width: 100%;
+}
+.wrapper ,.content {
+    height: fit-content;
+}
+.fix-width {
+    width: 100%;
+}
+#map {
+    box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    transition: 2s ease-in-out;
+  }
+  #map:hover {
+    box-shadow: 0px 12px 41px 5px rgba(0, 0, 0, 1);
+   -webkit-box-shadow: 0px 12px 41px 5px rgba(0, 0, 0, 1);
+   transition: 2s ease-in-out;
+  }
+
+footer {
+    height: fit-content;
+}
+.blog-image {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+}

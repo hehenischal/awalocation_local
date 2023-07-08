@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block csslinking %}
+<link rel="stylesheet" href="{% static 'css/createblogstyle.css' %}">
+{% endblock csslinking %}
+
+{% block contentbody %}
+<form method="post" action="{% url 'createblog' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class = "form-control" type="hidden" name="author" value="{{ user.username }}"><br>
+    <input class = "form-control" type="hidden" name="author_id" value="{{ user.id }}"><br>
+    <input class = "form-control" type="text" name="title" placeholder="Title"><br>
+    <input class = "form-control" type="text" name="location" placeholder="location"><br>
+    <input class = "form-control" type="file" name="image" placeholder="image"><br>
+    <input class = "form-control" type="float" name="latitude" placeholder="latitude"><br>
+    <input class = "form-control" type="float" name="longitude" placeholder="longitude"><br>
+    <select name="category" id="category">
+        <option value="Food">food</option>
+        <option value="Accomodation">Accomodation</option>
+        <option value="Cultural">Cultural</option>
+        <option value="Historic">Historic</option>
+        <option value="Others">others</option>
+    </select>
+    <input class = "form-control" type="text" name="things_to_do" placeholder="things_to_do"><br>
+    <input class = "form-control" type="text" name="best_time_to_visit" placeholder="best time to visit"><br>
+    <input class = "form-control" type="text" name="unique_features" placeholder="unique_features"><br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock contentbody %}
+
+

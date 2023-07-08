@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Poppins:wght@300;400;600&display=swap');
+/* font-family: 'Inder', sans-serif;
+font-family: 'Poppins', sans-serif; */
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    color-scheme: light;
+}
+.scroll-overflow 
+{
+    overflow: scroll;
+}
+.blog-container {
+  display: flex;
+  gap: 20px;
+  padding: 0 5vw 1vw 5vw;
+  margin: 0;
+  width: 100vw;
+  overflow: auto;
+}
+.blog-container-out {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    width: 100%;
+    padding: none;
+    overflow: auto;
+    padding: none;
+}
+.text {
+    padding: 0% 10%;
+}
+.title {
+    -webkit-text-stroke: .5px black;
+}
+hr 
+{
+    border: 1px solid grey;
+    margin: 0% 0%;
+    width: 80%;
+    padding: 0% 10%;
+}
+.hr-center {
+    width: 90%;
+    margin:0% 5%;
+}
+#map {
+    box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 29px 144px -34px rgba(0,0,0,1);
+}
+#map:hover {
+    box-shadow: 0px 12px 41px 5px rgba(0, 0, 0, 1);
+   -webkit-box-shadow: 0px 12px 41px 5px rgba(0, 0, 0, 1);
+}
+.postcard-solo {
+    
+    box-shadow: rgba(4, 38, 39, 0.682) 0px 5px 15px;
+    border-radius: 1em;
+
+}
+.desc-text {
+    font-size: small;
+}
+
+body{
+    min-height: 100vh;
+    position: relative;
+}
+image,picture,svg,video{
+    display: block;
+    max-width: 100%;
+}
+
+    .mountain img{
+        position: absolute;
+        top: 0;
+        z-index: -99;
+        width: 100%;
+        max-height: 200px;
+        transform: scale(1.5,1);
+    }
+    .topbar{
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+    }
+    .topbar .logo img{
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+    }
+    .topbar .userprofile img{
+        margin: 60px 30px 0 0;
+        width: 60px;
+        height: 60px;
+    }
+.navbar-img {
+    height: 40px;
+    width: 80px;
+}
+
+.postcard{
+ aspect-ratio : 2.5/3 ;
+ width: 350px;
+ padding: 0;
+ position: relative;
+ border-radius: .5rem;
+}
+.gradient{
+    position: absolute;
+    aspect-ratio : 2.5/3 ;
+    width: 350px;
+    background: linear-gradient(transparent,transparent,black);
+    border-radius: .5rem;
+
+}
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+.text{
+    position: absolute;
+    width: 350px;
+    bottom: 0;
+    color:white;
+}
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+.text-database {
+  text-transform: capitalize;
+}
+.postcard img{
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+}
+@supports(object-fit: cover){
+    .postcard img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}

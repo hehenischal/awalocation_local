@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block csslinking %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel = 'stylesheet' href= {% static 'css\base.css' %} >
+    <link rel = 'stylesheet' href= {% static 'css\blog.css' %} >
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    
+{% endblock csslinking %}
+
+{% block contentbody %}
+
+    <div class="row   justify-content-center fix-width ">
+        {% if blog.image %}
+            <img class="blog-image" src="{{blog.image.url}}"/>
+        {% endif %}
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <br>
+                <h1 class = "section-heading">{{blog.title}}</h1>
+                <hr>
+                <h2 class = "section-subheading"> Introduction</h2>
+                {{blog.desc.things_to_do}}
+                <h2 class="section-subheading">Best time to Visit</h2>
+                <p>{{blog.desc.best_time_to_visit}}</p>
+                <h2 class="section-subheading">Unique Features</h2>
+                <p>{{blog.desc.unique_features}}</p>
+                <span class="text-muted">
+                    coordinates: ({{blog.latitude}},{{blog.longitude}})
+                </span>
+                <div id="map" style="width:100%;height:600px;"></div>
+                <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                <blockquote class="blockquote">
+                    created at {{blog.created_at.date}} by {{blog.author_name}}
+                </blockquote>
+            </div>
+    </div>
+{% endblock contentbody %}
+{% block footer %}
+
+{% endblock footer %}
+{% block scripts %}
+    <script>
+        var x = document.getElementById("demo");
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+            }        
+            function showPosition(position) {
+                var x = document.getElementById("demo");
+                x.innerHTML = "Your location:<br>(" + position.coords.latitude +", "+ position.coords.longitude + ")";
+                var locationInfo = document.getElementById("location-info"); 
+                var button = document.querySelector(".btn-danger");
+                locationInfo.style.display = "none";
+                button.style.display = "none";
+                var user_lat = position.coords.latitude;
+                var user_long = position.coords.longitude;
+                var dest_lat = {{blog.latitude}};
+                var dest_long = {{blog.longitude}};
+                var center_lat = (user_lat + dest_lat) / 2;
+                var center_long = (user_long + dest_long) / 2;
+                var zoom = 11;
+                var map = L.map('map').setView([center_lat, center_long], zoom);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+            
+                L.marker([user_lat, user_long]).addTo(map);
+                L.destinationMarker = L.marker([dest_lat, dest_long]).addTo(map);
+            
+                L.Routing.control({
+                    waypoints: [
+                        L.latLng(user_lat, user_long),
+                        L.latLng(dest_lat, dest_long)
+                    ]
+                }).addTo(map);
+            }
+            
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+            
+            getLocation();
+            
+    </script>
+{% endblock scripts %}
+            
