@@ -15,3 +15,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'awalocation_local.settings')
 
 application = get_wsgi_application()
 
+app = application
+
