@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'awalocation_local.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://awalocation_database_user:NsM80kiz4A2H0VH7SqtGLDeMGji2Jwzi@dpg-cit9cltgkuvoig9pb67g-a/awalocation_database')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
