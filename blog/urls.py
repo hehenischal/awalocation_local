@@ -8,6 +8,7 @@ urlpatterns = [
     path('blog/<int:blog_id>/', views.blog, name='blog'),
     path('create/', views.createblog, name='createblog'),
     path('category/<str:query>/', views.category, name='category'),
+    path('contact/', views.contact, name='contact'),
 ]
 
 if settings.DEBUG:

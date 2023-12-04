@@ -68,3 +68,8 @@ def category(request,query):
     }
     return render(request,template_name,context)
 
+
+def contact(request):
+    template_name = 'contact.html'
+    return render(request,template_name)
+
